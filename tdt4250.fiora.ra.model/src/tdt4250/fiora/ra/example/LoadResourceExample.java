@@ -12,7 +12,7 @@ import tdt4250.fiora.ra.Course;
 import tdt4250.fiora.ra.Department;
 import tdt4250.fiora.ra.RaPackage;
 
-public class Example {
+public class LoadResourceExample {
 
 	public static void main(String[] args) {
 		// container of resources
@@ -29,7 +29,7 @@ public class Example {
 		// Use that parser to map to instances of our model
 		resSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xmi", new XMIResourceFactoryImpl());
 		
-		Resource resource = resSet.getResource(URI.createURI(Example.class.getResource("Department.xmi").toString()), true);
+		Resource resource = resSet.getResource(URI.createURI(LoadResourceExample.class.getResource("Department.xmi").toString()), true);
 //		TreeIterator<EObject> allContents = resource.getAllContents();
 		
 		Department department = (Department) resource.getContents().get(0);
