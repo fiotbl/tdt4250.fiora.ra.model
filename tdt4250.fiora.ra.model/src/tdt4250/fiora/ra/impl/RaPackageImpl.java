@@ -4,6 +4,7 @@ package tdt4250.fiora.ra.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -263,6 +264,15 @@ public class RaPackageImpl extends EPackageImpl implements RaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getDepartment__AllocateResouce__Course_Person_float() {
+		return departmentEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public RaFactory getRaFactory() {
 		return (RaFactory)getEFactoryInstance();
 	}
@@ -304,6 +314,7 @@ public class RaPackageImpl extends EPackageImpl implements RaPackage {
 		departmentEClass = createEClass(DEPARTMENT);
 		createEReference(departmentEClass, DEPARTMENT__COURSES);
 		createEReference(departmentEClass, DEPARTMENT__STAFF);
+		createEOperation(departmentEClass, DEPARTMENT___ALLOCATE_RESOUCE__COURSE_PERSON_FLOAT);
 	}
 
 	/**
@@ -354,6 +365,11 @@ public class RaPackageImpl extends EPackageImpl implements RaPackage {
 		initEClass(departmentEClass, Department.class, "Department", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDepartment_Courses(), this.getCourse(), null, "courses", null, 0, -1, Department.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDepartment_Staff(), this.getPerson(), null, "staff", null, 0, -1, Department.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		EOperation op = initEOperation(getDepartment__AllocateResouce__Course_Person_float(), null, "allocateResouce", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getCourse(), "course", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getPerson(), "resource", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEFloat(), "factor", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

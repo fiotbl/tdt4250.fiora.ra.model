@@ -25,6 +25,11 @@
     <genClasses ecoreClass="ra.ecore#//Department">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ra.ecore#//Department/courses"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ra.ecore#//Department/staff"/>
+      <genOperations ecoreOperation="ra.ecore#//Department/allocateResouce">
+        <genParameters ecoreParameter="ra.ecore#//Department/allocateResouce/course"/>
+        <genParameters ecoreParameter="ra.ecore#//Department/allocateResouce/resource"/>
+        <genParameters ecoreParameter="ra.ecore#//Department/allocateResouce/factor"/>
+      </genOperations>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

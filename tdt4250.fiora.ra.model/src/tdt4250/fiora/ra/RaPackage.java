@@ -4,6 +4,7 @@ package tdt4250.fiora.ra;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -259,13 +260,22 @@ public interface RaPackage extends EPackage {
 	int DEPARTMENT_FEATURE_COUNT = 2;
 
 	/**
+	 * The operation id for the '<em>Allocate Resouce</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPARTMENT___ALLOCATE_RESOUCE__COURSE_PERSON_FLOAT = 0;
+
+	/**
 	 * The number of operations of the '<em>Department</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEPARTMENT_OPERATION_COUNT = 0;
+	int DEPARTMENT_OPERATION_COUNT = 1;
 
 
 	/**
@@ -430,6 +440,16 @@ public interface RaPackage extends EPackage {
 	EReference getDepartment_Staff();
 
 	/**
+	 * Returns the meta object for the '{@link tdt4250.fiora.ra.Department#allocateResouce(tdt4250.fiora.ra.Course, tdt4250.fiora.ra.Person, float) <em>Allocate Resouce</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Allocate Resouce</em>' operation.
+	 * @see tdt4250.fiora.ra.Department#allocateResouce(tdt4250.fiora.ra.Course, tdt4250.fiora.ra.Person, float)
+	 * @generated
+	 */
+	EOperation getDepartment__AllocateResouce__Course_Person_float();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -579,6 +599,14 @@ public interface RaPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DEPARTMENT__STAFF = eINSTANCE.getDepartment_Staff();
+
+		/**
+		 * The meta object literal for the '<em><b>Allocate Resouce</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DEPARTMENT___ALLOCATE_RESOUCE__COURSE_PERSON_FLOAT = eINSTANCE.getDepartment__AllocateResouce__Course_Person_float();
 
 	}
 

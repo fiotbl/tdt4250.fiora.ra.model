@@ -2,6 +2,7 @@
  */
 package tdt4250.fiora.ra.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -104,6 +105,17 @@ public class DepartmentImpl extends MinimalEObjectImpl.Container implements Depa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void allocateResouce(Course course, Person resource, float factor) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -184,6 +196,21 @@ public class DepartmentImpl extends MinimalEObjectImpl.Container implements Depa
 				return staff != null && !staff.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case RaPackage.DEPARTMENT___ALLOCATE_RESOUCE__COURSE_PERSON_FLOAT:
+				allocateResouce((Course)arguments.get(0), (Person)arguments.get(1), (Float)arguments.get(2));
+				return null;
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //DepartmentImpl

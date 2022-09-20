@@ -48,4 +48,12 @@ public interface Department extends EObject {
 	 */
 	EList<Person> getStaff();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model courseRequired="true" resourceRequired="true" factorRequired="true"
+	 * @generated
+	 */
+	void allocateResouce(Course course, Person resource, float factor);
+
 } // Department
