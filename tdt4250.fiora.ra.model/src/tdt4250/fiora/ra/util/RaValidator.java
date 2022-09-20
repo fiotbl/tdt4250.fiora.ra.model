@@ -134,7 +134,7 @@ public class RaValidator extends EObjectValidator {
 		// -> specify the condition that violates the constraint
 		// -> verify the diagnostic details, including severity, code, and message
 		// Ensure that you remove @generated or mark it @generated NOT
-		if (sum >= 1.0f) {
+		if (sum < 1.0f) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(createDiagnostic
