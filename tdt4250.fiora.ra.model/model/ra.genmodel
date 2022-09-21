@@ -12,6 +12,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ra.ecore#//Course/code"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ra.ecore#//Course/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ra.ecore#//Course/resourceAllocations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ra.ecore#//Course/roles"/>
     </genClasses>
     <genClasses ecoreClass="ra.ecore#//Person">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ra.ecore#//Person/name"/>
@@ -24,6 +25,7 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ra.ecore#//ResourceAllocation/course"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ra.ecore#//ResourceAllocation/person"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ra.ecore#//ResourceAllocation/factor"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ra.ecore#//ResourceAllocation/role"/>
     </genClasses>
     <genClasses ecoreClass="ra.ecore#//Department">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ra.ecore#//Department/courses"/>
@@ -33,6 +35,10 @@
         <genParameters ecoreParameter="ra.ecore#//Department/allocateResouce/resource"/>
         <genParameters ecoreParameter="ra.ecore#//Department/allocateResouce/factor"/>
       </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="ra.ecore#//Role">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ra.ecore#//Role/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ra.ecore#//Role/factor"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
