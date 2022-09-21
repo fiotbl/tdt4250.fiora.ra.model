@@ -5,7 +5,8 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ra="platform:/plugin/tdt4250.fiora.ra.model/model/ra.ecore"
     xsi:schemaLocation="platform:/plugin/tdt4250.fiora.ra.model/model/ra.ecore ra.ecore">
-  <courses name="Advanced Software Design">
+  <courses code="TDT4250"
+      name="Advanced Software Design">
     <resourceAllocations
         person="//@staff.0"
         role="//@courses.0/@roles.0"/>
@@ -17,7 +18,8 @@
     <roles name="coordinator"
         factor="0.3"/>
   </courses>
-  <courses name="Informatics Project 1">
+  <courses code="TDT4196"
+      name="Informatics Project 1">
     <roles name="lecturer"
         factor="0.7"/>
     <roles name="coordinator"

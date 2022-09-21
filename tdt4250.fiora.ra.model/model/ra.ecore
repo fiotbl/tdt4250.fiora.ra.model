@@ -2,6 +2,9 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ra" nsURI="platform:/plugin/tdt4250.fiora.ra.model/model/ra.ecore"
     nsPrefix="ra">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="validationDelegates" value="http://www.eclipse.org/acceleo/query/1.0"/>
+  </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Course">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="needsEnoughResources"/>
@@ -25,6 +28,12 @@
         volatile="true" transient="true" derived="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ResourceAllocation">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="resourceAllocationFactorNonZero"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/acceleo/query/1.0">
+      <details key="resourceAllocationFactorNonZero" value="self.factor > 0.0"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="course" eType="#//Course"
         eOpposite="#//Course/resourceAllocations"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="person" eType="#//Person"
