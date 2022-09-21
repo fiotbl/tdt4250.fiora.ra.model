@@ -9,9 +9,11 @@
       name="Advanced Software Design">
     <resourceAllocations
         person="//@staff.0"
+        factor="0.95"
         role="//@courses.0/@roles.0"/>
     <resourceAllocations
         person="//@staff.0"
+        factor="0.91"
         role="//@courses.0/@roles.1"/>
     <roles name="lecturer"
         factor="0.7"/>
@@ -20,6 +22,12 @@
   </courses>
   <courses code="TDT4196"
       name="Informatics Project 1">
+    <resourceAllocations
+        factor="1.0"
+        role="//@courses.1/@roles.0"/>
+    <resourceAllocations
+        factor="0.98"
+        role="//@courses.1/@roles.1"/>
     <roles name="lecturer"
         factor="0.7"/>
     <roles name="coordinator"

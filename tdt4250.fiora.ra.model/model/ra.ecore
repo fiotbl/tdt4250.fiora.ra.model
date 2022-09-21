@@ -7,7 +7,10 @@
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Course">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="needsEnoughResources"/>
+      <details key="constraints" value="needsEnoughResources rolesMustBeFilled"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/acceleo/query/1.0">
+      <details key="rolesMustBeFilled" value="self.roles->collect(role | self.resourceAllocations->select(ra | ra.role = role).factor->sum())->forAll(num | num > 0.9)"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="#//CourseCode"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -29,10 +32,10 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ResourceAllocation">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="resourceAllocationFactorNonZero"/>
+      <details key="constraints" value="resourceAllocationRoleMustBeForSameCourse"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/acceleo/query/1.0">
-      <details key="resourceAllocationFactorNonZero" value="self.factor > 0.0"/>
+      <details key="resourceAllocationRoleMustBeForSameCourse" value="self.role.eContainer() = self.course"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="course" eType="#//Course"
         eOpposite="#//Course/resourceAllocations"/>
