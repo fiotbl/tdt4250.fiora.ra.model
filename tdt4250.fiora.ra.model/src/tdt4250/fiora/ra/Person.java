@@ -18,6 +18,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link tdt4250.fiora.ra.Person#getName <em>Name</em>}</li>
  *   <li>{@link tdt4250.fiora.ra.Person#getCapacity <em>Capacity</em>}</li>
  *   <li>{@link tdt4250.fiora.ra.Person#getResourceAllocations <em>Resource Allocations</em>}</li>
+ *   <li>{@link tdt4250.fiora.ra.Person#getGivenName <em>Given Name</em>}</li>
+ *   <li>{@link tdt4250.fiora.ra.Person#getFamilyName <em>Family Name</em>}</li>
  * </ul>
  *
  * @see tdt4250.fiora.ra.RaPackage#getPerson()
@@ -82,5 +84,49 @@ public interface Person extends EObject {
 	 * @generated
 	 */
 	EList<ResourceAllocation> getResourceAllocations();
+
+	/**
+	 * Returns the value of the '<em><b>Given Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Given Name</em>' attribute.
+	 * @see #setGivenName(String)
+	 * @see tdt4250.fiora.ra.RaPackage#getPerson_GivenName()
+	 * @model transient="true" volatile="true" derived="true"
+	 * @generated
+	 */
+	String getGivenName();
+
+	/**
+	 * Sets the value of the '{@link tdt4250.fiora.ra.Person#getGivenName <em>Given Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Given Name</em>' attribute.
+	 * @see #getGivenName()
+	 * @generated
+	 */
+	void setGivenName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Family Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Family Name</em>' attribute.
+	 * @see #setFamilyName(String)
+	 * @see tdt4250.fiora.ra.RaPackage#getPerson_FamilyName()
+	 * @model transient="true" volatile="true" derived="true"
+	 * @generated
+	 */
+	String getFamilyName();
+
+	/**
+	 * Sets the value of the '{@link tdt4250.fiora.ra.Person#getFamilyName <em>Family Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Family Name</em>' attribute.
+	 * @see #getFamilyName()
+	 * @generated
+	 */
+	void setFamilyName(String value);
 
 } // Person

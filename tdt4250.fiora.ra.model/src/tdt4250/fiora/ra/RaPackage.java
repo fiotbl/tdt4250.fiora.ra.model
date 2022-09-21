@@ -150,13 +150,31 @@ public interface RaPackage extends EPackage {
 	int PERSON__RESOURCE_ALLOCATIONS = 2;
 
 	/**
+	 * The feature id for the '<em><b>Given Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSON__GIVEN_NAME = 3;
+
+	/**
+	 * The feature id for the '<em><b>Family Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSON__FAMILY_NAME = 4;
+
+	/**
 	 * The number of structural features of the '<em>Person</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PERSON_FEATURE_COUNT = 3;
+	int PERSON_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Person</em>' class.
@@ -365,6 +383,28 @@ public interface RaPackage extends EPackage {
 	EReference getPerson_ResourceAllocations();
 
 	/**
+	 * Returns the meta object for the attribute '{@link tdt4250.fiora.ra.Person#getGivenName <em>Given Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Given Name</em>'.
+	 * @see tdt4250.fiora.ra.Person#getGivenName()
+	 * @see #getPerson()
+	 * @generated
+	 */
+	EAttribute getPerson_GivenName();
+
+	/**
+	 * Returns the meta object for the attribute '{@link tdt4250.fiora.ra.Person#getFamilyName <em>Family Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Family Name</em>'.
+	 * @see tdt4250.fiora.ra.Person#getFamilyName()
+	 * @see #getPerson()
+	 * @generated
+	 */
+	EAttribute getPerson_FamilyName();
+
+	/**
 	 * Returns the meta object for class '{@link tdt4250.fiora.ra.ResourceAllocation <em>Resource Allocation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -539,6 +579,22 @@ public interface RaPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PERSON__RESOURCE_ALLOCATIONS = eINSTANCE.getPerson_ResourceAllocations();
+
+		/**
+		 * The meta object literal for the '<em><b>Given Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PERSON__GIVEN_NAME = eINSTANCE.getPerson_GivenName();
+
+		/**
+		 * The meta object literal for the '<em><b>Family Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PERSON__FAMILY_NAME = eINSTANCE.getPerson_FamilyName();
 
 		/**
 		 * The meta object literal for the '{@link tdt4250.fiora.ra.impl.ResourceAllocationImpl <em>Resource Allocation</em>}' class.

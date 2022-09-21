@@ -20,7 +20,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import tdt4250.fiora.ra.Course;
 import tdt4250.fiora.ra.Department;
 import tdt4250.fiora.ra.Person;
+import tdt4250.fiora.ra.RaFactory;
 import tdt4250.fiora.ra.RaPackage;
+import tdt4250.fiora.ra.ResourceAllocation;
 
 /**
  * <!-- begin-user-doc -->
@@ -103,12 +105,20 @@ public class DepartmentImpl extends MinimalEObjectImpl.Container implements Depa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void allocateResouce(Course course, Person resource, float factor) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		// create a ResourceAllocation object
+		ResourceAllocation resourceAllocation = RaFactory.eINSTANCE.createResourceAllocation();
+		// link it to course and resource
+		resourceAllocation.setCourse(course);
+		// Line below is automatically called as part of setCourse
+		// due to EOpposite reference in model. 
+		// it can also be swapped with line above, one implies another. 
+//		course.getResourceAllocations().add(resourceAllocation);
+		resourceAllocation.setPerson(resource);
+		// set factor
+		resourceAllocation.setFactor(factor);
 	}
 
 	/**

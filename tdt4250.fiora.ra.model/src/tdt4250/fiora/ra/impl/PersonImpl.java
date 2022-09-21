@@ -33,6 +33,8 @@ import tdt4250.fiora.ra.ResourceAllocation;
  *   <li>{@link tdt4250.fiora.ra.impl.PersonImpl#getName <em>Name</em>}</li>
  *   <li>{@link tdt4250.fiora.ra.impl.PersonImpl#getCapacity <em>Capacity</em>}</li>
  *   <li>{@link tdt4250.fiora.ra.impl.PersonImpl#getResourceAllocations <em>Resource Allocations</em>}</li>
+ *   <li>{@link tdt4250.fiora.ra.impl.PersonImpl#getGivenName <em>Given Name</em>}</li>
+ *   <li>{@link tdt4250.fiora.ra.impl.PersonImpl#getFamilyName <em>Family Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -87,6 +89,26 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 	 * @ordered
 	 */
 	protected EList<ResourceAllocation> resourceAllocations;
+
+	/**
+	 * The default value of the '{@link #getGivenName() <em>Given Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGivenName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String GIVEN_NAME_EDEFAULT = null;
+
+	/**
+	 * The default value of the '{@link #getFamilyName() <em>Family Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFamilyName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String FAMILY_NAME_EDEFAULT = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -164,6 +186,70 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public String getGivenName() {
+		if (this.name == null) {
+			return null;
+		}
+		int pos = name.lastIndexOf(' ') ;
+		if (pos < 0) {
+			return null;
+		}
+		return name.substring(0, pos).trim();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void setGivenName(String newGivenName) {
+		String familyName = getFamilyName();
+		if (familyName == null) {
+			familyName = "?";
+		}
+		if (newGivenName == null) {
+			newGivenName = "";
+		}
+		setName((newGivenName + " " + familyName).trim());
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public String getFamilyName() {
+		if (this.name == null) {
+			return null;
+		}
+		int pos = name.lastIndexOf(' ') ;
+		if (pos < 0) {
+			return name;
+		}
+		return name.substring(pos + 1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void setFamilyName(String newFamilyName) {
+		String givenName = getGivenName();
+		if (givenName == null) {
+			givenName = "?";
+		}
+		if (newFamilyName == null) {
+			newFamilyName = "";
+		}
+		setName((givenName + " " + newFamilyName).trim());
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -204,6 +290,10 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 				return getCapacity();
 			case RaPackage.PERSON__RESOURCE_ALLOCATIONS:
 				return getResourceAllocations();
+			case RaPackage.PERSON__GIVEN_NAME:
+				return getGivenName();
+			case RaPackage.PERSON__FAMILY_NAME:
+				return getFamilyName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -227,6 +317,12 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 				getResourceAllocations().clear();
 				getResourceAllocations().addAll((Collection<? extends ResourceAllocation>)newValue);
 				return;
+			case RaPackage.PERSON__GIVEN_NAME:
+				setGivenName((String)newValue);
+				return;
+			case RaPackage.PERSON__FAMILY_NAME:
+				setFamilyName((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -248,6 +344,12 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 			case RaPackage.PERSON__RESOURCE_ALLOCATIONS:
 				getResourceAllocations().clear();
 				return;
+			case RaPackage.PERSON__GIVEN_NAME:
+				setGivenName(GIVEN_NAME_EDEFAULT);
+				return;
+			case RaPackage.PERSON__FAMILY_NAME:
+				setFamilyName(FAMILY_NAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -266,6 +368,10 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 				return capacity != CAPACITY_EDEFAULT;
 			case RaPackage.PERSON__RESOURCE_ALLOCATIONS:
 				return resourceAllocations != null && !resourceAllocations.isEmpty();
+			case RaPackage.PERSON__GIVEN_NAME:
+				return GIVEN_NAME_EDEFAULT == null ? getGivenName() != null : !GIVEN_NAME_EDEFAULT.equals(getGivenName());
+			case RaPackage.PERSON__FAMILY_NAME:
+				return FAMILY_NAME_EDEFAULT == null ? getFamilyName() != null : !FAMILY_NAME_EDEFAULT.equals(getFamilyName());
 		}
 		return super.eIsSet(featureID);
 	}

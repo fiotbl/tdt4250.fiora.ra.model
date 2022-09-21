@@ -16,6 +16,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ra.ecore#//Person/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ra.ecore#//Person/capacity"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ra.ecore#//Person/resourceAllocations"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ra.ecore#//Person/givenName"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ra.ecore#//Person/familyName"/>
     </genClasses>
     <genClasses ecoreClass="ra.ecore#//ResourceAllocation">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ra.ecore#//ResourceAllocation/course"/>
