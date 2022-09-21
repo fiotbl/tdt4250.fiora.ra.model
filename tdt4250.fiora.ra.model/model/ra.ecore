@@ -41,7 +41,7 @@
         eOpposite="#//Course/resourceAllocations"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="person" eType="#//Person"
         eOpposite="#//Person/resourceAllocations"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="factor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="factor" eType="#//Factor"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="role" eType="#//Role"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Department">
@@ -59,4 +59,5 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="factor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="Factor" instanceClassName="float"/>
 </ecore:EPackage>
