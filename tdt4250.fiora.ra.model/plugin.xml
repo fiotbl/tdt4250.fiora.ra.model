@@ -14,4 +14,11 @@
             genModel="model/ra.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated ra -->
+      <parser
+            type="ra"
+            class="tdt4250.fiora.ra.util.RaResourceFactoryImpl"/>
+   </extension>
+
 </plugin>
