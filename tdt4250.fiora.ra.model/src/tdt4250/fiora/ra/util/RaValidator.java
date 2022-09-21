@@ -94,6 +94,8 @@ public class RaValidator extends EObjectValidator {
 				return validateResourceAllocation((ResourceAllocation)value, diagnostics, context);
 			case RaPackage.DEPARTMENT:
 				return validateDepartment((Department)value, diagnostics, context);
+			case RaPackage.COURSE_CODE:
+				return validateCourseCode((String)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -176,6 +178,15 @@ public class RaValidator extends EObjectValidator {
 	 */
 	public boolean validateDepartment(Department department, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(department, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCourseCode(String courseCode, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
 	}
 
 	/**

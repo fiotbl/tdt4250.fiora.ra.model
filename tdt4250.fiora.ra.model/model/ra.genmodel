@@ -7,6 +7,7 @@
   <foreignModel>ra.ecore</foreignModel>
   <genPackages prefix="Ra" basePackage="tdt4250.fiora" disposableProviderFactory="true"
       ecorePackage="ra.ecore#/">
+    <genDataTypes ecoreDataType="ra.ecore#//CourseCode"/>
     <genClasses ecoreClass="ra.ecore#//Course">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ra.ecore#//Course/code"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ra.ecore#//Course/name"/>

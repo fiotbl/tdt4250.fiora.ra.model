@@ -4,6 +4,7 @@ package tdt4250.fiora.ra.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -53,6 +54,13 @@ public class RaPackageImpl extends EPackageImpl implements RaPackage {
 	 * @generated
 	 */
 	private EClass departmentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType courseCodeEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -291,6 +299,15 @@ public class RaPackageImpl extends EPackageImpl implements RaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EDataType getCourseCode() {
+		return courseCodeEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public RaFactory getRaFactory() {
 		return (RaFactory)getEFactoryInstance();
 	}
@@ -335,6 +352,9 @@ public class RaPackageImpl extends EPackageImpl implements RaPackage {
 		createEReference(departmentEClass, DEPARTMENT__COURSES);
 		createEReference(departmentEClass, DEPARTMENT__STAFF);
 		createEOperation(departmentEClass, DEPARTMENT___ALLOCATE_RESOUCE__COURSE_PERSON_FLOAT);
+
+		// Create data types
+		courseCodeEDataType = createEDataType(COURSE_CODE);
 	}
 
 	/**
@@ -368,7 +388,7 @@ public class RaPackageImpl extends EPackageImpl implements RaPackage {
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(courseEClass, Course.class, "Course", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCourse_Code(), ecorePackage.getEString(), "code", null, 0, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCourse_Code(), this.getCourseCode(), "code", null, 0, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCourse_Name(), ecorePackage.getEString(), "name", null, 0, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCourse_ResourceAllocations(), this.getResourceAllocation(), this.getResourceAllocation_Course(), "resourceAllocations", null, 0, -1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -392,6 +412,9 @@ public class RaPackageImpl extends EPackageImpl implements RaPackage {
 		addEParameter(op, this.getCourse(), "course", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getPerson(), "resource", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEFloat(), "factor", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		// Initialize data types
+		initEDataType(courseCodeEDataType, String.class, "CourseCode", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -4,6 +4,7 @@ package tdt4250.fiora.ra;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -297,6 +298,17 @@ public interface RaPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '<em>Course Code</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.lang.String
+	 * @see tdt4250.fiora.ra.impl.RaPackageImpl#getCourseCode()
+	 * @generated
+	 */
+	int COURSE_CODE = 4;
+
+
+	/**
 	 * Returns the meta object for class '{@link tdt4250.fiora.ra.Course <em>Course</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -490,6 +502,17 @@ public interface RaPackage extends EPackage {
 	EOperation getDepartment__AllocateResouce__Course_Person_float();
 
 	/**
+	 * Returns the meta object for data type '{@link java.lang.String <em>Course Code</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Course Code</em>'.
+	 * @see java.lang.String
+	 * @model instanceClass="java.lang.String"
+	 * @generated
+	 */
+	EDataType getCourseCode();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -663,6 +686,16 @@ public interface RaPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation DEPARTMENT___ALLOCATE_RESOUCE__COURSE_PERSON_FLOAT = eINSTANCE.getDepartment__AllocateResouce__Course_Person_float();
+
+		/**
+		 * The meta object literal for the '<em>Course Code</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.lang.String
+		 * @see tdt4250.fiora.ra.impl.RaPackageImpl#getCourseCode()
+		 * @generated
+		 */
+		EDataType COURSE_CODE = eINSTANCE.getCourseCode();
 
 	}
 

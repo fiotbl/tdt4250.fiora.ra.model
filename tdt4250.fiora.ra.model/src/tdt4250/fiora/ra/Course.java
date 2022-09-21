@@ -32,7 +32,7 @@ public interface Course extends EObject {
 	 * @return the value of the '<em>Code</em>' attribute.
 	 * @see #setCode(String)
 	 * @see tdt4250.fiora.ra.RaPackage#getCourse_Code()
-	 * @model
+	 * @model dataType="tdt4250.fiora.ra.CourseCode"
 	 * @generated
 	 */
 	String getCode();
